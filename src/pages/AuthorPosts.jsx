@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { DUMMY_POSTS } from '../Data'
 import PostItem from '../components/PostItem'
 import { useParams } from 'react-router-dom';
 import axiosInstance from '../components/axiosConfig';

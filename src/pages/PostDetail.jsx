@@ -1,6 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react'
 import PostAuthor from '../components/PostAuthor'
-import { data, Link, useParams } from 'react-router-dom'
+import {Link, useParams } from 'react-router-dom'
 // import Thumbnail from '../assets/blog22.jpg'
 import { UserContext } from '../context/UserContext';
 import Loader from '../components/Loader';

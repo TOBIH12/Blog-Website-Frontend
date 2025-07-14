@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { DUMMY_POSTS } from '../Data'
-import { data, Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
 import Loader from '../components/Loader'
 import axiosInstance from '../components/axiosConfig'
@@ -33,7 +32,7 @@ const Dashboard = () => {
           console.log(`Logged User Posts fectched sucessfully!, ${data.data}`);
         }else{
           setIsLoading(false);
-          setPosts(DUMMY_POSTS)
+          setPosts('No Posts Found')
           console.log(`Post not found`);
         }
       })

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { data, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axiosInstance from './axiosConfig'
 import ReactTimeAgo from 'react-time-ago'
 import TimeAgo from 'javascript-time-ago'
