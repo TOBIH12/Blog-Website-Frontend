@@ -6,9 +6,11 @@ const Logout = () => {
   const {setCurrentUser} = useContext(UserContext);
   const navigate = useNavigate();
 
+
+  
+  setCurrentUser(null);
+  navigate("/login");
  
-      setCurrentUser(null);
-      navigate("/login");
   return (
     <>
     
@@ -16,4 +18,4 @@ const Logout = () => {
   )
 }
 
-export default Logout
+export default Logout;

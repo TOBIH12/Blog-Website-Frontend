@@ -16,7 +16,7 @@ const Footer = () => {
       <li><Link to='/posts/categories/Weather'>Weather</Link></li>
     </ul>
     <div className="footer-copyright">
-      <small>All Rights Reserved &copy; Copyright, Tobi Dev.</small>
+      <small>All Rights Reserved &copy;Copyright, Ayo.</small>
     </div>
    </footer>
   )

@@ -44,7 +44,7 @@ if(loading) {
       authors.map((author) => {
         return <Link key={author._id} to={`/posts/users/${author._id}`} className='author'>
           <div className="author-avatar">
-            <img className='avatar' src={`${import.meta.env.VITE_FRONTEND_ASSETS_BASE_URI}/uploads/${author?.avatar}`} alt={`image of ${author.name}`} />
+            <img className='avatar' src={`${import.meta.env.VITE_FRONTEND_ASSETS_BASE_URI}/${author?.avatar}`} alt={`image of ${author.name}`} />
           </div>
           <div className="author-info">
             <h4>{author.name}</h4>

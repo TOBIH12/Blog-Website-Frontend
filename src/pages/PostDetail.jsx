@@ -5,7 +5,8 @@ import {Link, useParams } from 'react-router-dom'
 import { UserContext } from '../context/UserContext';
 import Loader from '../components/Loader';
 import DeletePost from './DeletePost';
-import axios from 'axios';
+import axiosInstance from '../components/axiosConfig';
+import LikeButton from '../components/LikeButton';
 
 const PostDetail = () => {
 const {id} = useParams()
@@ -15,13 +16,18 @@ const [error, setError] = useState(null)
 const [isLoading, setIsLoading] = useState(false)
 
 
+
 const {currentUser} = useContext(UserContext);
+
+const isLikedByUser = post?.likes.includes(currentUser?.id);
+
+
 
 useEffect(() => {
 const getPost = async () => {
   setIsLoading(true)
   try {
-    await axios.get(`${import.meta.env.VITE_FRONTEND_BASE_URI}/posts/${id}`)
+    await axiosInstance.get(`${import.meta.env.VITE_FRONTEND_BASE_URI}/posts/${id}`)
     .then((data) => {
       setPost(data.data);
       setCreatorID(data.data.creator);
@@ -56,9 +62,12 @@ if(isLoading) {
       </div>
       <h1>{post.title}</h1>
       <div className="post-detail-thumbnail">
-        <img src={`${import.meta.env.VITE_FRONTEND_ASSETS_BASE_URI}/uploads/${post.thumbnail}`} alt="" />
+        <img src={`${import.meta.env.VITE_FRONTEND_ASSETS_BASE_URI}/${post.thumbnail}`} alt="" />
       </div>
       <p dangerouslySetInnerHTML={{__html: post.description}}></p>
+
+      <LikeButton post={post} id={post._id} initialLikes={post.likes.length} isLikedByUser={isLikedByUser} currentUser={currentUser}/>
+
     </div>}
   </section>
   )

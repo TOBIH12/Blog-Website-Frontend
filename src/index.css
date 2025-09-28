@@ -2,6 +2,7 @@
 
 :root{
     --color-primary: #6f6af8;
+    --color-theme: #58d173;
     --color-white: #fff;
     --color-red: rgb(255, 63, 63);
     --color-gray-100: hsl(220, 20%, 10%, 5%);
@@ -181,6 +182,7 @@ footer{
     background: var(--color-gray-900);
     margin-top: 6rem;
     padding-top: 6rem;
+    overflow: hidden;
 }
 
 .footer-categories{
@@ -291,6 +293,32 @@ footer{
 .post-detail p{
     margin-bottom: 0.7rem;
 
+}
+
+.likeDiv{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--color-gray-500);
+}
+
+.likeBtn{
+    background: transparent;
+    font-size: 1.1rem;
+    cursor: pointer;
+    
+
+}
+.liked{
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--color-theme);
+}
+
+.likeDiv span{
+    padding-top: 4px;
 }
 
 /* REGISTER AND FORM PAGE */
@@ -548,7 +576,7 @@ input, select, textarea{
         font-size: 1.5rem;
         cursor: pointer;
     }
-.posts-container{
+.posts-container, .category-posts-container, .author-posts-container{
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 0 0.7rem;
@@ -591,15 +619,12 @@ input, select, textarea{
         width: 5rem;
     }
 
-    .author-posts-container{
-      grid-template-columns: 1fr;
-      padding: 0 0.7rem;
-    }
+   
 } 
 
 .loader{
     display: grid;
     place-items: center;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }

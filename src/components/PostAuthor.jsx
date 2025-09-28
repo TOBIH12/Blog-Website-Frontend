@@ -31,10 +31,10 @@ useEffect(() => {
   return (
    <Link to={`/posts/users/${author._id}`} className='post-author'>
     <div className="post-author-avatar">
-        <img src={`${import.meta.env.VITE_FRONTEND_ASSETS_BASE_URI}/uploads/${author?.avatar}`} alt="" />
+        <img src={`${import.meta.env.VITE_FRONTEND_ASSETS_BASE_URI}/${author?.avatar}`} alt="" />
     </div>
     <div className="post-author-details">
-        <h5>{author.name}</h5>
+        <h5>{author?.name}</h5>
         <small><ReactTimeAgo date={new Date(createdAt)} locale='en-US'/></small>
     </div>
    </Link>

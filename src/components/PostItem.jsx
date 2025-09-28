@@ -8,7 +8,7 @@ const PostItem=({postID, thumbnail, category, title, description, authorID, crea
   return (
    <article className='post'>
     <div className="post-thumbnail">
-        <img src={`${import.meta.env.VITE_FRONTEND_ASSETS_BASE_URI}/uploads/${thumbnail}`} alt={title} />
+        <img src={`${import.meta.env.VITE_FRONTEND_ASSETS_BASE_URI}/${thumbnail}`} alt={title} />
     </div>
     <div className="post-content">
         <Link to={`/posts/${postID}`} >

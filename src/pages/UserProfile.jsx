@@ -134,8 +134,8 @@ const UserProfile = () => {
         }
       })
     } catch (err) {
-      console.log(err)
-      setError('Something went wrong');
+      console.log('Axios Error ->>>',err)
+      setError(err.response?.data?.message || err.message || err );
     }
   }
 
@@ -149,7 +149,7 @@ const UserProfile = () => {
       <div className="profile-details">
         <div className="avatar-wrapper">
           <div className="profile-avatar">
-            <img src={`${import.meta.env.VITE_FRONTEND_ASSETS_BASE_URI}/uploads/${avatar}`} alt="" />
+            <img src={`${import.meta.env.VITE_FRONTEND_ASSETS_BASE_URI}/${avatar}`} alt="" />
           </div>
           {/* FORM TO UPDATE PROFILE AVATAR (PROFILE PICTURE) */}
           <form className='avatar-form'>
